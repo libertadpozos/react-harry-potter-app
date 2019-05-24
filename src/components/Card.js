@@ -9,6 +9,7 @@ class Card extends React.Component {
       <div>
         <p>{name}</p>
         <img src={img} alt={name} />
+        
         <p>{house}</p>
       </div>
     );

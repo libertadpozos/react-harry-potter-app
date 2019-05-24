@@ -67,7 +67,7 @@ class App extends React.Component {
   }
   
   render(){
-    const {isFetching}=this.state;
+    const {data, isFetching}=this.state;
   return (
     <div>
       <header>
@@ -76,18 +76,29 @@ class App extends React.Component {
       {isFetching 
       ? <p>Loading...</p>
       : (
-        
-        
-       
-        <main>
-        <Filters 
-        onChangeName={this.handleInputFilterName}
-        inputValueName={this.state.filters.byName}
-        />
-        <ListCharacters data={this.getFilteredList()}/>
-      </main>
-      
-      
+        <React.Fragment>
+        <Switch>
+          <Route
+          exact path="/"
+          render={() => (
+            <main>
+            <Filters 
+            onChangeName={this.handleInputFilterName}
+            inputValueName={this.state.filters.byName}
+            />
+            <ListCharacters data={this.getFilteredList()}/>
+          </main>
+          )}
+      />
+
+      <Route
+      path="/card/:cardId"
+      render={routerProps=>(
+        <DetailCard match={routerProps.match} data={data} />
+      )}
+      />
+      </Switch>
+      </React.Fragment>
      
 
       )

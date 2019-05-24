@@ -2,6 +2,7 @@ import React from "react";
 import "./ListCharacters.css";
 import Card from "./Card";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 class ListCharacters extends React.Component {
   render() {
@@ -12,11 +13,16 @@ class ListCharacters extends React.Component {
           {data.map(character => {
             return (
               <li key={character.id}>
-                <Card
-                  name={character.name}
-                  img={character.image}
+                <Link to={`/card/${character.id}`}>
+                <p>{character.name}</p>
+                <img src={character.image} alt={character.name} />
+                <p>{character.house}</p>
+                {/* <Card
+                  name={}
+                  img={}
                   house={character.house}
-                />
+                /> */}
+                </Link>
               </li>
             );
           })}
