@@ -9,9 +9,13 @@ class App extends React.Component {
 
     this.state={
       data:[],
-      isFetching: true
+      isFetching: true,
+      filters:{
+        byName:""
+      }
     }
     this.getData=this.getData.bind(this);
+    this.handleInputFilterName=this.handleInputFilterName.bind(this)
   }
 
   componentDidMount(){
@@ -36,10 +40,31 @@ class App extends React.Component {
     })
   }
 
+  handleInputFilterName(event){
+    const inputValue= event.target.value
+    this.setState(prevState=>{
+      return {  
+        ...prevState.filters,
+          filters:{
+            byName: inputValue
+          } 
+      }
+    })
+  }
 
+  getFilteredList(){
+    return this.state.data.filter(character => {
+      if (character.name.includes(this.state.filters.byName)) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+  
 
   render(){
-    const {data, isFetching}=this.state;
+    const {isFetching}=this.state;
   return (
     <div>
       <header>
@@ -49,8 +74,11 @@ class App extends React.Component {
       ? <p>Loading...</p>
       : (
         <main>
-        <Filters/ >
-        <ListCharacters data={data}/>
+        <Filters 
+        onChangeName={this.handleInputFilterName}
+        inputValueName={this.state.filters.byName}
+        />
+        <ListCharacters data={this.getFilteredList()}/>
       </main>
       )
     }
