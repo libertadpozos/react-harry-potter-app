@@ -67,7 +67,7 @@ class App extends React.Component {
   }
   
   render(){
-    const {data, isFetching}=this.state;
+  const {data, isFetching}=this.state;
   return (
     <div>
       <header>
@@ -99,8 +99,6 @@ class App extends React.Component {
       />
       </Switch>
       </React.Fragment>
-     
-
       )
     }
     <footer>
@@ -112,5 +110,4 @@ class App extends React.Component {
   );
 }
 }
-
 export default App;
