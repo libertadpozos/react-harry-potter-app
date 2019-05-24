@@ -11,7 +11,7 @@ class DetailCard extends React.Component {
 
     return (
       <article>
-        <img src={arrCard.image} alt={arrCard.name} />
+        <img src={arrCard.image} alt={arrCard.name} className="photo"/>
         <p>{arrCard.name}</p>
         <p>{`Date of Birth: ${arrCard.dateOfBirth}`}</p>
         <p>{`House: ${arrCard.house}`}</p>

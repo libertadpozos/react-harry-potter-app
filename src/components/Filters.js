@@ -5,9 +5,9 @@ class Filters extends React.Component {
   render() {
       const {onChangeName, inputValueName}=this.props
     return (
-      <div>
-        <label htmlFor="filter-name">Escribe un personaje</label>
-        <input
+      <div className="filter__container">
+        <label htmlFor="filter-name" className='hidden'>Escribe un personaje</label>
+        <input className="filter__input"
           id="filter-name"
           type="text"
           placeholder="Hermione Granger"

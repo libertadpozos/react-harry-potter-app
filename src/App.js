@@ -71,7 +71,7 @@ class App extends React.Component {
   return (
     <div>
       <header>
-      <h1>Harry Potter</h1>
+      <h1 className="title">It's LeviOsa not LeviosA</h1>
       </header>
       {isFetching 
       ? <p>Loading...</p>

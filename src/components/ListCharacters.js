@@ -7,23 +7,22 @@ class ListCharacters extends React.Component {
   render() {
     const { data } = this.props;
     return (
-      <div>
-        <ul>
+      
+        <ul className="list__container">
           {data.map(character => {
             return (
               <li key={character.id}>
                 <Link to={`/card/${character.id}`}>
                 <p>{character.name}</p>
-                <img src={character.image} alt={character.name} />
+                <img className="photo__list" src={character.image} alt={character.name} />
                 <p>{character.house}</p>
-
                 </Link>
               </li>
             );
           })}
         </ul>
 
-      </div>
+      
     );
   }
 }

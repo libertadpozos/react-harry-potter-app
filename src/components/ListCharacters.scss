@@ -1,0 +1,8 @@
+.list__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+.photo__list{
+    width: 200px;
+    border-radius: 50px;   
+}
