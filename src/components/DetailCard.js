@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./DetailCard.scss";
+
 
 class DetailCard extends React.Component {
   render() {

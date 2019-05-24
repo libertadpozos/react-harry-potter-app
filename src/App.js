@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import ListCharacters from './components/ListCharacters'
 import Filters from './components/Filters'
 import { Switch, Route } from "react-router-dom";

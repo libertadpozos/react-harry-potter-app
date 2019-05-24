@@ -1,7 +1,7 @@
 import React from "react";
-import "./ListCharacters.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "./ListCharacters.scss";
 
 class ListCharacters extends React.Component {
   render() {
