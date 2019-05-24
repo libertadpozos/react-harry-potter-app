@@ -2,6 +2,10 @@ import React from 'react';
 import './App.css';
 import ListCharacters from './components/ListCharacters'
 import Filters from './components/Filters'
+import { Switch, Route } from "react-router-dom";
+import DetailCard from './components/DetailCard';
+
+
 
 class App extends React.Component {
   constructor(props){
@@ -62,7 +66,6 @@ class App extends React.Component {
     });
   }
   
-
   render(){
     const {isFetching}=this.state;
   return (
@@ -73,6 +76,9 @@ class App extends React.Component {
       {isFetching 
       ? <p>Loading...</p>
       : (
+        
+        
+       
         <main>
         <Filters 
         onChangeName={this.handleInputFilterName}
@@ -80,8 +86,17 @@ class App extends React.Component {
         />
         <ListCharacters data={this.getFilteredList()}/>
       </main>
+      
+      
+     
+
       )
     }
+    <footer>
+        <p>Harry Potter Cards</p>
+        <p>by Libertad Pozos</p>
+        <p>2019</p>
+    </footer>
     </div>
   );
 }

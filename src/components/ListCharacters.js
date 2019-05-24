@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 class ListCharacters extends React.Component {
   render() {
     const { data } = this.props;
-    console.log(data);
     return (
       <div>
         <ul>
