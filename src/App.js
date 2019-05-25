@@ -7,6 +7,7 @@ import DetailCard from './components/DetailCard';
 
 
 
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -69,7 +70,7 @@ class App extends React.Component {
   render(){
   const {data, isFetching}=this.state;
   return (
-    <div>
+    <div className="general__container">
       <header>
       <h1 className="title">It's LeviOsa not LeviosA</h1>
       </header>

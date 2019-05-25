@@ -11,13 +11,21 @@ class ListCharacters extends React.Component {
         <ul className="list__container">
           {data.map(character => {
             return (
-              <li key={character.id}>
-                <Link to={`/card/${character.id}`}>
-                <p>{character.name}</p>
+              <Link  key={character.id} to={`/card/${character.id}`}>
+              <li className="card__container" key={character.id}>
+               
+                <p className="character-name__list">{character.name}</p>
+                <div className="photo__container">
                 <img className="photo__list" src={character.image} alt={character.name} />
-                <p>{character.house}</p>
-                </Link>
+                </div>
+                {!character.house?
+        <p className="character-house__list">House: without a House</p>
+        :  <p className="character-house__list">{`House: ${character.house}`}</p>
+        }
+                {/* <p className="character-house__list">{character.house}</p> */}
+              
               </li>
+              </Link>
             );
           })}
         </ul>
