@@ -102,10 +102,11 @@ class App extends React.Component {
       </React.Fragment>
       )
     }
-    <footer>
-        <p>Harry Potter Cards</p>
-        <p>by Libertad Pozos</p>
-        <p>2019</p>
+    <footer className="footer__container">
+        <p className="title__footer">Harry Potter Cards</p>
+        <p className="author">Libertad Pozos</p>
+        <p className="year__footer">2019</p>
+      
     </footer>
     </div>
   );
