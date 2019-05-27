@@ -59,7 +59,7 @@ class App extends React.Component {
 
   getFilteredList(){
     return this.state.data.filter(character => {
-      if (character.name.includes(this.state.filters.byName)) {
+      if (character.name.toLowerCase().includes(this.state.filters.byName.toLowerCase())) {
         return true;
       } else {
         return false;
