@@ -7,7 +7,6 @@ class DetailCard extends React.Component {
     const { match, data } = this.props;
     const { cardId } = match.params;
     const arrCard = data.find(character => character.id === parseInt(cardId));
-    console.log(arrCard);
 
     return (
       <article className="detailCard">

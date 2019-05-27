@@ -6,6 +6,9 @@ import "./ListCharacters.scss";
 class ListCharacters extends React.Component {
   render() {
     const { data } = this.props;
+
+
+    
     return (
       <ul className="list__container">
         {data.map(character => {
