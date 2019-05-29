@@ -49,8 +49,8 @@ class App extends React.Component {
     const inputValue= event.target.value
     this.setState(prevState=>{
       return {  
-        ...prevState.filters,
           filters:{
+            ...prevState.filters,
             byName: inputValue
           } 
       }
