@@ -10,8 +10,8 @@ class ListCharacters extends React.Component {
       <ul className="list__container">
         {data.map(character => {
           return (
-            <Link className="links" key={character.id} to={`/card/${character.id}`}>
               <li className="card__container" key={character.id}>
+                <Link className="links" key={character.id} to={`/card/${character.id}`}>
                 <p className="character-name__list">{character.name}</p>
                 <div className="photo__container">
                   <img
@@ -29,8 +29,9 @@ class ListCharacters extends React.Component {
                     character.house
                   }`}</p>
                 )}
+                 </Link>
               </li>
-            </Link>
+           
           );
         })}
       </ul>

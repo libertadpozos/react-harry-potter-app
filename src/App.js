@@ -82,7 +82,7 @@ class App extends React.Component {
           <Route
           exact path="/"
           render={() => (
-            <main>
+            <main className="main__container">
             <Filters 
             onChangeName={this.handleInputFilterName}
             inputValueName={this.state.filters.byName}

@@ -8,13 +8,19 @@
 .general__container{
     background-image: url("./milkyway.jpeg");
     background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.main__container{
+    flex-grow: 1;
 }
 .footer__container{
     background-color: #2E3543;
     color: white;
     text-align: center;
     padding:10px;
-    margin-top: 30px;
+    position: relative;
 }
 
 .year__footer{
