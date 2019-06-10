@@ -16,11 +16,13 @@ class App extends React.Component {
       data:[],
       isFetching: true,
       filters:{
-        byName:""
+        byName:"",
+        byHouse:[]
       }
     }
     this.getData=this.getData.bind(this);
     this.handleInputFilterName=this.handleInputFilterName.bind(this)
+    this.handleInputFilterHouse=this.handleInputFilterHouse.bind(this)
   }
 
   componentDidMount(){
@@ -56,15 +58,39 @@ class App extends React.Component {
       }
     })
   }
+  
+  handleInputFilterHouse(event){
+    const inputValue= event.target.value
+    console.log(inputValue)
+    
+    this.setState(prevState=>{
+      return {
+        filters:{
+          ...prevState.filters,
+          byHouse: prevState.filters.byHouse.find(house=> house===inputValue)? 
+          prevState.filters.byHouse.filter(house=>house !== inputValue)
+          : prevState.filters.byHouse.concat(inputValue)
+        }
+      }
+    })
+  }
 
   getFilteredList(){
-    return this.state.data.filter(character => {
+    return (
+      this.state.data
+      .filter(character => {
       if (character.name.toLowerCase().includes(this.state.filters.byName.toLowerCase())) {
         return true;
       } else {
         return false;
       }
-    });
+    })
+    .filter(character=> 
+     !this.state.filters.byHouse.length?
+     true
+     : this.state.filters.byHouse.includes(character.house)
+    )
+    )
   }
   
   render(){
@@ -86,6 +112,7 @@ class App extends React.Component {
             <Filters 
             onChangeName={this.handleInputFilterName}
             inputValueName={this.state.filters.byName}
+            onChangeHouse={this.handleInputFilterHouse}
             />
             <ListCharacters data={this.getFilteredList()}/>
           </main>
